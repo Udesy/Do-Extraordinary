@@ -1,16 +1,28 @@
 import gsap from "gsap";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Cursor = () => {
-  window.addEventListener("mousemove", (e) => {
-    const { clientX: x, clientY: y } = e;
-    gsap.to("#cursor", {
-      x: x - 15,
-      y: y - 15,
-      duration: 0.2,
-      ease: "power2.out",
-    });
-  });
+  useEffect(() => {
+    let animationFrame;
+
+    const mousemove = (e) => {
+      animationFrame = requestAnimationFrame(() => {
+        gsap.to("#cursor", {
+          x: e.clientX - 15,
+          y: e.clientY - 15,
+          duration: 0.2,
+          ease: "power2.out",
+        });
+      });
+    };
+
+    window.addEventListener("mousemove", mousemove);
+
+    return () => {
+      window.removeEventListener("mousemove", mousemove);
+      cancelAnimationFrame(animationFrame);
+    };
+  }, []);
 
   return (
     <>

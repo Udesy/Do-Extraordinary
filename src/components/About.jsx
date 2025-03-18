@@ -14,7 +14,7 @@ const About = () => {
               PRODUCE.
             </h6>
           </div>
-          <div className="relative flex flex-row items-center mt-[3rem]">
+          <div className="relative flex xl:flex-row max-md:flex-col max-md:justify-center items-center mt-[3rem]">
             <div className="relative mr-6">
               <h1 className="font-garamound text-[7rem] font-medium tracking-[-0.1em] leading-[6rem]">
                 AOI is a creative <br /> agency in Melbourne <br /> injecting
@@ -45,7 +45,7 @@ const About = () => {
             <div></div>
           </div>
         </div>
-        <div className="relative flex flex-row uppercase justify-between text-[4.8rem] mt-[6rem] font-family">
+        <div className="relative flex xl:flex-row md:flex-2/4 uppercase justify-between text-[4.8rem] mt-[6rem] font-family">
           <div id="about_text">
             <h6>the</h6>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Marquee, Section } from ".";
-import { Arrow, WindowGif, WindowText } from "../assets";
+import { Arrow, OverlayText, WindowGif } from "../assets";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -37,7 +37,7 @@ const Hero = () => {
             id="bounce_text"
             className="absolute top-1/4 -left-1/6 w-[30rem]"
           >
-            <img src={WindowText} className="w-full h-full object-cover" />
+            <img src={OverlayText} className="w-full h-full object-cover" />
           </div>
         </div>
         <div className="flex flex-row justify-between items-center w-full mt-[3rem]">
@@ -58,7 +58,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <Marquee />
+      <Marquee type={"HeroMarquee"} />
     </Section>
   );
 };
